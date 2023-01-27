@@ -79,8 +79,10 @@ function removeOldErrorMessage(errorDiv){
 }
 
 function checkPassword() {
-    let input = document.getElementById("pass");
-    input.onkeyup = addDivWithErrorMessage;
+    let inputPass = document.getElementById("pass");
+    let inputPassRepeat = document.getElementById("passRepeat");
+    inputPass.onkeyup = addDivWithErrorMessage;
+    inputPassRepeat.onkeyup = addDivWithErrorMessage;
 }
 
 checkPassword(); 
