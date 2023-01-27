@@ -56,17 +56,20 @@ function addDivWithErrorMessage() {
     let passDiv = document.getElementById("passRepeatDiv");
     let message = getErrorMessage();
     //roziazanie 1
-    passDiv.innerHTML += '<div id="validationServer03Feedback" class="invalid-feedback">' + message + '</div>';
+    //passDiv.innerHTML += '<div id="validationServer03Feedback" class="invalid-feedback">' + message + '</div>';
 
-    //rozwiazanie 2 -> tworzace diva, nie dziala poprawnie do konca, poniewaz atrybuty nie sa przypisywane do diva...
-    /*let errorMessageDiv = document.createElement("div");
+    //rozwiazanie 2 -> tworzace diva
+    let errorMessageDiv = document.createElement("div");
     let idForErrorMessageDiv = document.createAttribute("id");
     idForErrorMessageDiv.value = "validationServer03Feedback";
     let classForErrorMessageDiv = document.createAttribute("class");
     classForErrorMessageDiv.value = "invalid-feedback";
     let errorMessage = document.createTextNode(getErrorMessage());
+    
+    errorMessageDiv.setAttributeNode(classForErrorMessageDiv);
+    errorMessageDiv.setAttributeNode(idForErrorMessageDiv);
     errorMessageDiv.appendChild(errorMessage);
-    passDiv.appendChild(errorMessageDiv);*/
+    passDiv.appendChild(errorMessageDiv);
 }
 
 function removeOldErrorMessage(errorDiv){
