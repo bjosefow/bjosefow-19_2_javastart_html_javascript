@@ -1,8 +1,8 @@
-function getTextFromPass(){
+function getTextFromPass() {
     return document.getElementById("pass").value;
 }
 
-function getTextFromPassRepeat(){
+function getTextFromPassRepeat() {
     return document.getElementById("passRepeat").value;
 }
 
@@ -27,7 +27,7 @@ function checkIfPassHasSpecialChar(pass) {
 }
 
 
-function getErrorMessage(){
+function getErrorMessage() {
     let pass = getTextFromPass();
     let passRepeat = getTextFromPassRepeat();
     let errorMessage = '';
@@ -50,10 +50,9 @@ function getErrorMessage(){
 }
 
 function addDivWithErrorMessage() {
-    let errorDiv = document.getElementById("validationServer03Feedback");
-    removeOldErrorMessage(errorDiv);
+    removeOldErrorMessage();
 
-    let passDiv = document.getElementById("passRepeatDiv");
+    let divForErrorMessage = document.getElementById("passRepeatDiv");
     let message = getErrorMessage();
     //roziazanie 1
     //passDiv.innerHTML += '<div id="validationServer03Feedback" class="invalid-feedback">' + message + '</div>';
@@ -69,10 +68,11 @@ function addDivWithErrorMessage() {
     errorMessageDiv.setAttributeNode(classForErrorMessageDiv);
     errorMessageDiv.setAttributeNode(idForErrorMessageDiv);
     errorMessageDiv.appendChild(errorMessage);
-    passDiv.appendChild(errorMessageDiv);
+    divForErrorMessage.appendChild(errorMessageDiv);
 }
 
-function removeOldErrorMessage(errorDiv){
+function removeOldErrorMessage() {
+    let errorDiv = document.getElementById("validationServer03Feedback");
     if (errorDiv) {
         errorDiv.remove();
     }
